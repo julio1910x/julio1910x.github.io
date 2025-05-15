@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Avaliação - Pajamas Burger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pajamas Burger - Avaliações</h1>
+
+        <!-- Formulário de Avaliação -->
+        <div>
+            <h2>Deixe sua Avaliação</h2>
+            <form class="formulario-avaliacao" onsubmit="adicionarAvaliacao(event)">
+                <input type="text" id="nome" placeholder="Seu nome" required>
+                <textarea id="comentario" rows="5" placeholder="Escreva seu comentário..." required></textarea>
+
+                <div class="estrelas">
+                    <span class="estrela" onclick="selecionarNota(1)">&#9733;</span>
+                    <span class="estrela" onclick="selecionarNota(2)">&#9733;</span>
+                    <span class="estrela" onclick="selecionarNota(3)">&#9733;</span>
+                    <span class="estrela" onclick="selecionarNota(4)">&#9733;</span>
+                    <span class="estrela" onclick="selecionarNota(5)">&#9733;</span>
+                </div>
+                <input type="hidden" id="nota" value="0">
+
+                <button type="submit">Enviar Avaliação</button>
+            </form>
+        </div>
+
+        <!-- Lista de Avaliações -->
+        <ul class="avaliacoes-lista" id="avaliacoesLista">
+            <!-- As avaliações serão adicionadas aqui dinamicamente -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Pajamas Burger - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="avaliacoes.js"></script>
+</body>
+</html>
