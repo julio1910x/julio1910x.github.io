@@ -256,3 +256,15 @@ footer a:hover {
 .whatsapp-button {
     margin-top: 20px;
 }
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
