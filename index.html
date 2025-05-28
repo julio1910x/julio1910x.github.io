@@ -18,7 +18,7 @@
     <div class="stars"></div>
 
     <div class="container">
-        <h1>Pajamas Burger</h1>
+        <h1 class="titulo-principal">Pajamas Burger</h1>
         <h2>Bem-vindo ao hambúrguer mais aconchegante da cidade!</h2>
 
         <!-- Menu de abas -->
@@ -115,19 +115,19 @@
                 <img src="https://via.placeholder.com/300x200?text=Batata+Frita" alt="Batata Frita" />
                 <h3>Batata Frita</h3>
                 <p>Porção de batata frita crocante e deliciosa.</p>
-                <button class="button" onclick="adicionarPedido('Batata Frita', 10)">Adicionar ao pedido</button>
+                <label for="tamanho-batata">Escolha o tamanho:</label>
+                <select id="tamanho-batata">
+                    <option value="pequena" data-preco="8">Pequena - R$ 8,00</option>
+                    <option value="media" data-preco="10" selected>Média - R$ 10,00</option>
+                    <option value="grande" data-preco="13">Grande - R$ 13,00</option>
+                </select>
+                <button class="button" onclick="adicionarBatata()">Adicionar ao pedido</button>
             </div>
             <div class="item">
                 <img src="https://via.placeholder.com/300x200?text=Cebola+Frita" alt="Cebola Frita" />
                 <h3>Cebola Frita</h3>
                 <p>Anéis de cebola frita crocantes e saborosos.</p>
                 <button class="button" onclick="adicionarPedido('Cebola Frita', 12)">Adicionar ao pedido</button>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Salada" alt="Salada" />
-                <h3>Salada</h3>
-                <p>Mix de folhas frescas para acompanhar seu lanche.</p>
-                <button class="button" onclick="adicionarPedido('Salada', 8)">Adicionar ao pedido</button>
             </div>
         </section>
 
@@ -171,7 +171,7 @@
                 href="#"
                 target="_blank"
             >
-                <button class="button">Fazer Pedido pelo WhatsApp</button>
+                <button class="button" type="button" onclick="finalizarPedido()">Fazer Pedido pelo WhatsApp</button>
             </a>
         </div>
 
@@ -181,7 +181,7 @@
             <ul id="itens-pedido">
                 <!-- Itens serão inseridos aqui -->
             </ul>
-            <button onclick="finalizarPedido()">Finalizar Pedido</button>
+            <button type="button" onclick="finalizarPedido()">Finalizar Pedido</button>
         </div>
     </div>
 

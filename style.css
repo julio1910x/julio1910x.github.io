@@ -155,3 +155,11 @@ button[onclick="finalizarPedido()"] {
 button[onclick="finalizarPedido()"]:hover {
     background-color: #218838;
 }
+
+.titulo-principal {
+    margin-top: 80px; /* Ajuste para descer o título */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+}
