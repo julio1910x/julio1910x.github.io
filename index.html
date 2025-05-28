@@ -21,8 +21,18 @@
         <h1>Pajamas Burger</h1>
         <h2>Bem-vindo ao hambúrguer mais aconchegante da cidade!</h2>
 
-        <!-- Seção Lanches -->
-        <section class="menu" id="lanches">
+        <!-- Menu de abas -->
+        <div class="tabs">
+            <button class="tab-button active" data-tab="lanches">Lanches</button>
+            <button class="tab-button" data-tab="bebidas">Bebidas</button>
+            <button class="tab-button" data-tab="sobremesas">Sobremesas</button>
+            <button class="tab-button" data-tab="acompanhamentos">Acompanhamentos</button>
+            <button class="tab-button" data-tab="combos">Combos</button>
+        </div>
+
+        <!-- Conteúdo das abas -->
+
+        <section class="menu tab-content active" id="lanches">
             <h2>Lanches</h2>
             <div class="item">
                 <img src="img/xburguer.jpg" alt="Night Burger" />
@@ -44,8 +54,7 @@
             </div>
         </section>
 
-        <!-- Seção Bebidas -->
-        <section class="menu" id="bebidas">
+        <section class="menu tab-content" id="bebidas">
             <h2>Bebidas</h2>
             <!-- Refrigerantes -->
             <div class="subcategoria">
@@ -84,8 +93,7 @@
             </div>
         </section>
 
-        <!-- Seção Sobremesas -->
-        <section class="menu" id="sobremesas">
+        <section class="menu tab-content" id="sobremesas">
             <h2>Sobremesas</h2>
             <div class="item">
                 <img src="https://via.placeholder.com/300x200?text=Brownie" alt="Brownie" />
@@ -101,8 +109,7 @@
             </div>
         </section>
 
-        <!-- Seção Acompanhamentos -->
-        <section class="menu" id="acompanhamentos">
+        <section class="menu tab-content" id="acompanhamentos">
             <h2>Acompanhamentos</h2>
             <div class="item">
                 <img src="https://via.placeholder.com/300x200?text=Batata+Frita" alt="Batata Frita" />
@@ -124,8 +131,7 @@
             </div>
         </section>
 
-        <!-- Seção Combos -->
-        <section class="menu" id="combos">
+        <section class="menu tab-content" id="combos">
             <h2>Combos</h2>
             <div class="item">
                 <img src="https://via.placeholder.com/300x200?text=Combo+Night+Burger" alt="Combo Night Burger" />
@@ -161,7 +167,8 @@
         <!-- Botão para enviar pedido via WhatsApp -->
         <div class="whatsapp-button">
             <a
-                href="https://api.whatsapp.com/send?phone=+5511951188862&text=Gostaria%20de%20fazer%20um%20pedido%20do%20site%20Pajamas%20Burger.%20Meu%20pedido%20é:%20"
+                id="link-whatsapp"
+                href="#"
                 target="_blank"
             >
                 <button class="button">Fazer Pedido pelo WhatsApp</button>
@@ -173,4 +180,11 @@
             <h3>Seu Pedido</h3>
             <ul id="itens-pedido">
                 <!-- Itens serão inseridos aqui -->
-            </ul
+            </ul>
+            <button onclick="finalizarPedido()">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
