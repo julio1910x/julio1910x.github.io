@@ -11,28 +11,18 @@
 
     <!-- Logo no canto superior direito -->
     <div class="logo">
-        <img src="img/logo.jpeg" alt="Logo Pajamas Burger" />
+        <img src="img/Logo.jpeg" alt="Logo Pajamas Burger" />
     </div>
 
     <!-- Fundo de estrelas -->
     <div class="stars"></div>
 
     <div class="container">
-        <h1 class="titulo-principal">Pajamas Burger</h1>
+        <h1>Pajamas Burger</h1>
         <h2>Bem-vindo ao hambúrguer mais aconchegante da cidade!</h2>
 
-        <!-- Menu de abas -->
-        <div class="tabs">
-            <button class="tab-button active" data-tab="lanches">Lanches</button>
-            <button class="tab-button" data-tab="bebidas">Bebidas</button>
-            <button class="tab-button" data-tab="sobremesas">Sobremesas</button>
-            <button class="tab-button" data-tab="acompanhamentos">Acompanhamentos</button>
-            <button class="tab-button" data-tab="combos">Combos</button>
-        </div>
-
-        <!-- Conteúdo das abas -->
-
-        <section class="menu tab-content active" id="lanches">
+        <!-- Cardápio de Lanches -->
+        <div class="menu">
             <h2>Lanches</h2>
             <div class="item">
                 <img src="img/xburguer.jpg" alt="Night Burger" />
@@ -52,48 +42,27 @@
                 <p>Hambúrguer clássico com carne bovina, queijo e molho especial.</p>
                 <button class="button" onclick="adicionarPedido('Pajamas Classic', 20)">Adicionar ao pedido</button>
             </div>
-        </section>
+        </div>
 
-        <section class="menu tab-content" id="bebidas">
+        <!-- Cardápio de Bebidas -->
+        <div class="menu">
             <h2>Bebidas</h2>
-            <!-- Refrigerantes -->
-            <div class="subcategoria">
-                <h3>Refrigerantes</h3>
-                <div class="item">
-                    <img src="https://via.placeholder.com/300x200?text=Coca-Cola" alt="Coca-Cola" />
-                    <h3>Coca-Cola</h3>
-                    <p>Refrigerante clássico, geladinho para acompanhar seu lanche.</p>
-                    <button class="button" onclick="adicionarPedido('Coca-Cola', 7)">Adicionar ao pedido</button>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/300x200?text=Guaraná" alt="Guaraná" />
-                    <h3>Guaraná Antarctica</h3>
-                    <p>Refrigerante brasileiro refrescante e doce.</p>
-                    <button class="button" onclick="adicionarPedido('Guaraná Antarctica', 7)">Adicionar ao pedido</button>
-                </div>
-                <div class="item">
-                    <img src="https://via.placeholder.com/300x200?text=Fanta+Laranja" alt="Fanta Laranja" />
-                    <h3>Fanta Laranja</h3>
-                    <p>Refrigerante sabor laranja, doce e refrescante.</p>
-                    <button class="button" onclick="adicionarPedido('Fanta Laranja', 7)">Adicionar ao pedido</button>
-                </div>
+            <div class="item">
+                <img src="https://via.placeholder.com/300x200?text=Soda" alt="Soda" />
+                <h3>Soda</h3>
+                <p>Refrigerante geladinho para acompanhar seu lanche.</p>
+                <button class="button" onclick="adicionarPedido('Soda', 7)">Adicionar ao pedido</button>
             </div>
-
-            <!-- Sucos Naturais -->
-            <div class="subcategoria">
+            <div class="item">
+                <img src="https://via.placeholder.com/300x200?text=Suco+Natural" alt="Suco Natural" />
                 <h3>Suco Natural</h3>
-                <div class="item">
-                    <img src="https://via.placeholder.com/300x200?text=Suco+Natural" alt="Suco Natural" />
-                    <h3>Suco Natural</h3>
-                    <p>Suco fresco nos sabores: laranja, limão e maracujá.</p>
-                    <button class="button" onclick="adicionarPedido('Suco Natural - Laranja', 8)">Adicionar Suco Laranja</button>
-                    <button class="button" onclick="adicionarPedido('Suco Natural - Limão', 8)">Adicionar Suco Limão</button>
-                    <button class="button" onclick="adicionarPedido('Suco Natural - Maracujá', 8)">Adicionar Suco Maracujá</button>
-                </div>
+                <p>Suco fresco de laranja ou limão.</p>
+                <button class="button" onclick="adicionarPedido('Suco Natural', 8)">Adicionar ao pedido</button>
             </div>
-        </section>
+        </div>
 
-        <section class="menu tab-content" id="sobremesas">
+        <!-- Cardápio de Sobremesas -->
+        <div class="menu">
             <h2>Sobremesas</h2>
             <div class="item">
                 <img src="https://via.placeholder.com/300x200?text=Brownie" alt="Brownie" />
@@ -107,52 +76,7 @@
                 <p>Milkshake cremoso de chocolate ou baunilha.</p>
                 <button class="button" onclick="adicionarPedido('Milkshake', 15)">Adicionar ao pedido</button>
             </div>
-        </section>
-
-        <section class="menu tab-content" id="acompanhamentos">
-            <h2>Acompanhamentos</h2>
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Batata+Frita" alt="Batata Frita" />
-                <h3>Batata Frita</h3>
-                <p>Porção de batata frita crocante e deliciosa.</p>
-                <label for="tamanho-batata">Escolha o tamanho:</label>
-                <select id="tamanho-batata">
-                    <option value="pequena" data-preco="8">Pequena - R$ 8,00</option>
-                    <option value="media" data-preco="10" selected>Média - R$ 10,00</option>
-                    <option value="grande" data-preco="13">Grande - R$ 13,00</option>
-                </select>
-                <button class="button" onclick="adicionarBatata()">Adicionar ao pedido</button>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Cebola+Frita" alt="Cebola Frita" />
-                <h3>Cebola Frita</h3>
-                <p>Anéis de cebola frita crocantes e saborosos.</p>
-                <button class="button" onclick="adicionarPedido('Cebola Frita', 12)">Adicionar ao pedido</button>
-            </div>
-        </section>
-
-        <section class="menu tab-content" id="combos">
-            <h2>Combos</h2>
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Combo+Night+Burger" alt="Combo Night Burger" />
-                <h3>Combo Night Burger</h3>
-                <p>Night Burger + Batata Frita + Coca-Cola por R$ 38</p>
-                <button class="button" onclick="adicionarPedido('Combo Night Burger', 38)">Adicionar ao pedido</button>
-            </div>
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Combo+Sleepy+Cheese" alt="Combo Sleepy Cheese" />
-                <h3>Combo Sleepy Cheese</h3>
-                <p>Sleepy Cheese + Cebola Frita + Guaraná por R$ 36</p>
-                <button class="button" onclick="adicionarPedido('Combo Sleepy Cheese', 36)">Adicionar ao pedido</button>
-            </div>
-
-            <div class="item">
-                <img src="https://via.placeholder.com/300x200?text=Combo+Pajamas+Classic" alt="Combo Pajamas Classic" />
-                <h3>Combo Pajamas Classic</h3>
-                <p>Pajamas Classic + Salada + Suco Natural (Laranja) por R$ 33</p>
-                <button class="button" onclick="adicionarPedido('Combo Pajamas Classic', 33)">Adicionar ao pedido</button>
-            </div>
-        </section>
+        </div>
 
         <!-- Sobre a Loja -->
         <div class="sobre-loja">
@@ -167,11 +91,10 @@
         <!-- Botão para enviar pedido via WhatsApp -->
         <div class="whatsapp-button">
             <a
-                id="link-whatsapp"
-                href="#"
+                href="https://api.whatsapp.com/send?phone=+5511951188862&text=Gostaria%20de%20fazer%20um%20pedido%20do%20site%20Pajamas%20Burger.%20Meu%20pedido%20é:%20"
                 target="_blank"
             >
-                <button class="button" type="button" onclick="finalizarPedido()">Fazer Pedido pelo WhatsApp</button>
+                <button class="button">Fazer Pedido pelo WhatsApp</button>
             </a>
         </div>
 
@@ -181,9 +104,17 @@
             <ul id="itens-pedido">
                 <!-- Itens serão inseridos aqui -->
             </ul>
-            <button type="button" onclick="finalizarPedido()">Finalizar Pedido</button>
+            <button onclick="finalizarPedido()">Finalizar Pedido</button>
         </div>
     </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 Pajamas Burger - Todos os direitos reservados</p>
+        <p>
+            <a href="mailto:contato@pajamasburger.com">Contato</a> | <a href="#">Política de Privacidade</a>
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
