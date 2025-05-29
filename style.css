@@ -1,17 +1,15 @@
-/* Estilo com tema de pijama aconchegante */
-
-/* Fundo geral com azul clarinho */
+/* Fundo e corpo */
 body {
-    background: #f0f4ff;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     position: relative;
-    color: #4b3f72;
+    color: #333;
 }
 
-/* Estrelas (mantendo para o efeito de sonho) */
+/* Estrelas animadas */
 .stars {
     position: absolute;
     top: 0;
@@ -38,13 +36,13 @@ body {
 
 /* Títulos */
 h1 {
-    color: #6c5b7b;
+    color: #ff6f61;
     font-size: 3rem;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #f67280;
+    color: #ff6f61;
     font-size: 2.5rem;
     margin-bottom: 15px;
 }
@@ -59,11 +57,11 @@ h2 {
 
 .item {
     display: inline-block;
-    background-color: #ffe0f0;
+    background-color: #fff;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 15px;
     margin: 15px;
-    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     width: 280px;
     opacity: 0;
     transform: translateY(20px);
@@ -72,12 +70,12 @@ h2 {
 }
 
 .item:hover {
-    background-color: #ffd3ec;
+    background-color: #ffe5d9;
 }
 
 .item img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -86,7 +84,7 @@ h2 {
 }
 
 .item h3 {
-    color: #6c5b7b;
+    color: #ff6f61;
     font-size: 1.5rem;
     margin-top: 15px;
 }
@@ -98,7 +96,7 @@ h2 {
 
 /* Botões */
 .button {
-    background-color: #f67280;
+    background-color: #ff6f61;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -109,16 +107,16 @@ h2 {
 }
 
 .button:hover {
-    background-color: #d94e6b;
+    background-color: #e65c50;
 }
 
 /* Carrinho */
 #carrinho {
     margin-top: 40px;
-    background-color: #d6eaff;
+    background-color: #fff;
     padding: 20px;
     border-radius: 15px;
-    color: #4b3f72;
+    color: #333;
     text-align: center;
 }
 
@@ -133,7 +131,7 @@ h2 {
 }
 
 #carrinho button {
-    background-color: #6c5b7b;
+    background-color: #ff6f61;
     padding: 10px 20px;
     font-size: 1.2rem;
     color: white;
@@ -144,13 +142,13 @@ h2 {
 }
 
 #carrinho button:hover {
-    background-color: #4b3f72;
+    background-color: #e65c50;
 }
 
 /* Sobre a loja */
 .sobre-loja {
-    background-color: #ffe6f0;
-    color: #4b3f72;
+    background-color: #fff;
+    color: #333;
     padding: 40px 20px;
     border-radius: 15px;
     margin: 30px 0;
@@ -158,11 +156,11 @@ h2 {
 
 /* Rodapé */
 footer {
-    background-color: #f67280;
+    background-color: #ff6f61;
     color: white;
     padding: 20px;
     text-align: center;
-    border-top: 5px solid #ffd3ec;
+    border-top: 5px solid #ffe5d9;
 }
 
 footer a {
@@ -187,6 +185,7 @@ footer a:hover {
     width: auto;
 }
 
+/* Animação de entrada */
 @keyframes slideIn {
     0% { opacity: 0; transform: translateY(20px); }
     100% { opacity: 1; transform: translateY(0); }
