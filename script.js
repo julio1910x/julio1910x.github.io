@@ -1,45 +1,41 @@
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+const carrinho = [];
+const listaCarrinho = document.getElementById('lista-carrinho');
+const totalElement = document.getElementById('total');
 
-        button.classList.add('active');
-        document.getElementById(button.getAttribute('data-tab')).classList.add('active');
-    });
-});
-
-const itensPedido = [];
-
-function adicionarPedido(nome, preco) {
-    itensPedido.push({ nome, preco });
+function adicionarAoCarrinho(nome, preco) {
+    carrinho.push({ nome, preco });
     atualizarCarrinho();
 }
 
 function atualizarCarrinho() {
-    const lista = document.getElementById('itens-pedido');
-    lista.innerHTML = '';
+    listaCarrinho.innerHTML = '';
+    let total = 0;
 
-    itensPedido.forEach((item, index) => {
+    carrinho.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = `${item.nome} - R$ ${item.preco}`;
-        lista.appendChild(li);
+        li.textContent = `${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}`;
+        listaCarrinho.appendChild(li);
+        total += item.preco;
     });
 
-    atualizarLinkWhatsapp();
+    totalElement.textContent = `Total: R$ ${total.toFixed(2).replace('.', ',')}`;
 }
 
-function atualizarLinkWhatsapp() {
-    const mensagem = encodeURIComponent("Gostaria de fazer um pedido do site Pajamas Burger. Meu pedido é:\n" +
-        itensPedido.map(item => `- ${item.nome} (R$ ${item.preco})`).join('\n'));
-
-    const link = `https://api.whatsapp.com/send?phone=+5511951188862&text=${mensagem}`;
-    document.getElementById('link-whatsapp').href = link;
-}
-
-function finalizarPedido() {
-    if (itensPedido.length === 0) {
-        alert("Adicione itens ao pedido antes de finalizar.");
+function enviarPedido() {
+    if (carrinho.length === 0) {
+        alert('Seu carrinho está vazio.');
         return;
     }
-    window.open(document.getElementById('link-whatsapp').href, '_blank');
+
+    let mensagem = "Olá! Gostaria de fazer o seguinte pedido:\n\n";
+    carrinho.forEach(item => {
+        mensagem += `- ${item.nome} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`;
+    });
+
+    const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+    mensagem += `\nTotal: R$ ${total.toFixed(2).replace('.', ',')}`;
+    const telefone = "SEU_NUMERO_AQUI"; // Substitua pelo número do WhatsApp com DDD
+    const link = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+    document.getElementById('link-whatsapp').href = link;
+    window.open(link, '_blank');
 }
