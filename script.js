@@ -1,102 +1,88 @@
-// Seu array de pedido
 let pedido = [];
 
-// Função para adicionar item no pedido
+// Adiciona item ao pedido
 function adicionarPedido(nome, preco) {
-    pedido.push({ nome, preco });
-    exibirPedido();
+    pedido.push({ nome, preco });
+    exibirPedido();
 }
 
-// Função para adicionar Batata Frita com tamanho
+// Adiciona batata com tamanho
 function adicionarBatata() {
-    const select = document.getElementById('tamanho-batata');
-    const tamanho = select.value;
-    const opcaoSelecionada = select.options[select.selectedIndex];
-    const preco = parseFloat(opcaoSelecionada.getAttribute('data-preco'));
+    const select = document.getElementById('tamanho-batata');
+    const tamanho = select.value;
+    const preco = parseFloat(select.options[select.selectedIndex].dataset.preco);
+    const nomePedido = `Batata Frita (${tamanho.charAt(0).toUpperCase() + tamanho.slice(1)})`;
 
-    const nomePedido = `Batata Frita (${tamanho.charAt(0).toUpperCase() + tamanho.slice(1)})`;
-
-    adicionarPedido(nomePedido, preco);
+    adicionarPedido(nomePedido, preco);
 }
 
-// Função para mostrar o pedido no carrinho
+// Exibe o carrinho
 function exibirPedido() {
-    const listaPedido = document.getElementById('itens-pedido');
-    listaPedido.innerHTML = '';
+    const listaPedido = document.getElementById('itens-pedido');
+    listaPedido.innerHTML = '';
+    let total = 0;
 
-    let total = 0;
+    pedido.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button onclick="excluirItem(${index})" style="background-color: #e74c3c; color: white; border: none; cursor: pointer; margin-left: 10px;">Excluir</button>
+        `;
+        listaPedido.appendChild(li);
+        total += item.preco;
+    });
 
-    pedido.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-            ${item.nome} - R$ ${item.preco.toFixed(2)} 
-            <button onclick="excluirItem(${index})" style="background-color: #e74c3c; color: white; border: none; cursor: pointer; margin-left: 10px;">Excluir</button>
-        `;
-        listaPedido.appendChild(li);
+    const totalElemento = document.createElement('li');
+    totalElemento.style.fontWeight = 'bold';
+    totalElemento.style.marginTop = '10px';
+    totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
+    listaPedido.appendChild(totalElemento);
 
-        total += item.preco;
-    });
-
-    const totalElemento = document.createElement('li');
-    totalElemento.style.fontWeight = 'bold';
-    totalElemento.style.marginTop = '10px';
-    totalElemento.textContent = `Total: R$ ${total.toFixed(2)}`;
-    listaPedido.appendChild(totalElemento);
-
-    atualizarLinkWhatsApp();
+    atualizarLinkWhatsApp();
 }
 
-// Excluir item do pedido
 function excluirItem(index) {
-    pedido.splice(index, 1);
-    exibirPedido();
+    pedido.splice(index, 1);
+    exibirPedido();
 }
 
-// Finalizar pedido
 function finalizarPedido() {
-    if (pedido.length === 0) {
-        alert('Adicione pelo menos um item ao pedido antes de finalizar.');
-        return;
-    }
-
-    // Abre o link do WhatsApp na mesma aba sem abrir nova aba
-    window.location.href = document.getElementById('link-whatsapp').href;
+    if (pedido.length === 0) {
+        alert('Adicione pelo menos um item ao pedido antes de finalizar.');
+        return;
+    }
+    window.location.href = document.getElementById('link-whatsapp').href;
 }
 
-// Atualiza o link do WhatsApp com a mensagem formatada
 function atualizarLinkWhatsApp() {
-    if (pedido.length === 0) {
-        document.getElementById('link-whatsapp').href = '#';
-        return;
-    }
+    if (pedido.length === 0) {
+        document.getElementById('link-whatsapp').href = '#';
+        return;
+    }
 
-    let mensagem = 'Olá, gostaria de fazer o seguinte pedido:%0A';
+    let mensagem = 'Olá, gostaria de fazer o seguinte pedido:%0A';
+    pedido.forEach(item => {
+        mensagem += `- ${item.nome} (R$ ${item.preco.toFixed(2)})%0A`;
+    });
 
-    pedido.forEach(item => {
-        mensagem += `- ${item.nome} (R$ ${item.preco.toFixed(2)})%0A`;
-    });
+    const total = pedido.reduce((acc, item) => acc + item.preco, 0);
+    mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
 
-    const total = pedido.reduce((acc, item) => acc + item.preco, 0);
-
-    mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
-
-    // Número do WhatsApp (coloque o seu número)
-    const numeroWhats = '5511951188862';
-
-    document.getElementById('link-whatsapp').href = `https://wa.me/${numeroWhats}?text=${mensagem}`;
+    const numeroWhats = '5511951188862';
+    document.getElementById('link-whatsapp').href = `https://wa.me/${numeroWhats}?text=${mensagem}`;
 }
 
 // Controle das abas
-document.querySelectorAll('.tab-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const tab = button.getAttribute('data-tab');
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.tab-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.getAttribute('data-tab');
 
-        // Remove a classe active de todas as abas e botões
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-        // Adiciona active na aba e conteúdo selecionados
-        button.classList.add('active');
-        document.getElementById(tab).classList.add('active');
-    });
+            button.classList.add('active');
+            document.getElementById(tab).classList.add('active');
+        });
+    });
 });
