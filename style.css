@@ -428,3 +428,11 @@ footer a:hover {
 .whatsapp-button a:hover {
   background-color: #1ebc5c;
 }
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}

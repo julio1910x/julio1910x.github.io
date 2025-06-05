@@ -6,34 +6,6 @@
   <title>Pajamas Burger</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Exemplo rápido para esconder conteúdo das abas */
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    /* Estilo básico para abas */
-    .tabs {
-      margin-bottom: 1rem;
-      display: flex;
-      gap: 10px;
-    }
-    .tab-button {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border: none;
-      background: #eee;
-      border-radius: 4px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .tab-button.active {
-      background: #333;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
   <header class="logo">
@@ -54,61 +26,22 @@
       <button class="tab-button" data-tab="tab-sobre">Sobre</button>
     </nav>
 
-    <!-- Conteúdos das abas -->
+    <!-- Seções de conteúdo -->
     <section id="tab-lanches" class="tab-content active">
       <div class="menu">
-        <div class="item">
-          <img src="img/xburguer.jpg" alt="Night Burger" loading="lazy" />
-          <h3>Night Burger</h3>
-          <p>Hambúrguer suculento com cheddar, bacon e molho especial.</p>
-          <button class="button" data-produto="Night Burger" data-preco="25">Adicionar ao pedido</button>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Sleepy+Cheese" alt="Sleepy Cheese" loading="lazy" />
-          <h3>Sleepy Cheese</h3>
-          <p>Hambúrguer de frango com queijo cremoso e alface crocante.</p>
-          <button class="button" data-produto="Sleepy Cheese" data-preco="22">Adicionar ao pedido</button>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Pajamas+Classic" alt="Pajamas Classic" loading="lazy" />
-          <h3>Pajamas Classic</h3>
-          <p>Hambúrguer clássico com carne bovina, queijo e molho especial.</p>
-          <button class="button" data-produto="Pajamas Classic" data-preco="20">Adicionar ao pedido</button>
-        </div>
+        <!-- Itens de lanche -->
       </div>
     </section>
 
     <section id="tab-bebidas" class="tab-content">
       <div class="menu">
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Soda" alt="Soda" loading="lazy" />
-          <h3>Soda</h3>
-          <p>Refrigerante geladinho para acompanhar seu lanche.</p>
-          <button class="button" data-produto="Soda" data-preco="7">Adicionar ao pedido</button>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Suco+Natural" alt="Suco Natural" loading="lazy" />
-          <h3>Suco Natural</h3>
-          <p>Suco fresco de laranja ou limão.</p>
-          <button class="button" data-produto="Suco Natural" data-preco="8">Adicionar ao pedido</button>
-        </div>
+        <!-- Itens de bebida -->
       </div>
     </section>
 
     <section id="tab-sobremesas" class="tab-content">
       <div class="menu">
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Brownie" alt="Brownie" loading="lazy" />
-          <h3>Brownie</h3>
-          <p>Deliciosa sobremesa de chocolate com sorvete.</p>
-          <button class="button" data-produto="Brownie" data-preco="12">Adicionar ao pedido</button>
-        </div>
-        <div class="item">
-          <img src="https://via.placeholder.com/300x200?text=Milkshake" alt="Milkshake" loading="lazy" />
-          <h3>Milkshake</h3>
-          <p>Milkshake cremoso de chocolate ou baunilha.</p>
-          <button class="button" data-produto="Milkshake" data-preco="15">Adicionar ao pedido</button>
-        </div>
+        <!-- Itens de sobremesa -->
       </div>
     </section>
 
@@ -132,7 +65,7 @@
 
     <div class="whatsapp-button">
       <a id="link-whatsapp"
-         href="https://api.whatsapp.com/send?phone=+5511951188862&text=Gostaria%20de%20fazer%20um%20pedido%20do%20site%20Pajamas%20Burger.%20Meu%20pedido%20é:%20"
+         href="#"
          target="_blank" rel="noopener noreferrer">
         Fazer Pedido pelo WhatsApp
       </a>
@@ -142,29 +75,10 @@
   <footer>
     <p>&copy; 2025 Pajamas Burger - Todos os direitos reservados</p>
     <p>
-      <a href="mailto:contato@pajamasburger.com">Contato</a> | 
+      <a href="mailto:contato@pajamasburger.com">Contato</a> |
       <a href="#">Política de Privacidade</a>
     </p>
   </footer>
-
-  <script>
-    // Script para alternar abas
-    document.querySelectorAll('.tab-button').forEach(button => {
-      button.addEventListener('click', () => {
-        const tab = button.dataset.tab;
-
-        // Remove active das abas
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        // Adiciona active na aba clicada
-        button.classList.add('active');
-
-        // Remove active de todos os conteúdos
-        document.querySelectorAll('.tab-content').forEach(section => section.classList.remove('active'));
-        // Ativa a seção correspondente
-        document.getElementById(tab).classList.add('active');
-      });
-    });
-  </script>
 
   <script src="script.js" defer></script>
 </body>
