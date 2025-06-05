@@ -6,29 +6,6 @@
   <title>Pajamas Burger</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .selo {
-      display: inline-block;
-      margin-left: 8px;
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-size: 0.7rem;
-      font-weight: bold;
-      color: white;
-    }
-
-    .selo.promocao {
-      background-color: #e74c3c;
-    }
-
-    .selo.vegano {
-      background-color: #27ae60;
-    }
-
-    .selo.natural {
-      background-color: #3498db;
-    }
-  </style>
 </head>
 <body>
   <header class="logo">
@@ -41,6 +18,7 @@
     <h1>Pajamas Burger</h1>
     <h2>Bem-vindo ao hambúrguer mais aconchegante da cidade!</h2>
 
+    <!-- Abas de navegação -->
     <nav class="tabs">
       <button class="tab-button active" data-tab="tab-lanches">Lanches</button>
       <button class="tab-button" data-tab="tab-bebidas">Bebidas</button>
@@ -48,27 +26,26 @@
       <button class="tab-button" data-tab="tab-sobre">Sobre</button>
     </nav>
 
+    <!-- Conteúdos das abas -->
     <section id="tab-lanches" class="tab-content active">
       <div class="menu">
         <div class="item">
           <img src="img/xburguer.jpg" alt="Night Burger" loading="lazy" />
-          <h3>Night Burger <span class="selo promocao">Promoção</span></h3>
-          <p>Hambúrguer suculento com cheddar, bacon e molho da casa.</p>
-          <button class="button" data-produto="Night Burger" data-preco="22">Adicionar ao pedido</button>
+          <h3>Night Burger</h3>
+          <p>Hambúrguer suculento com cheddar, bacon e molho especial.</p>
+          <button class="button" data-produto="Night Burger" data-preco="25">Adicionar ao pedido</button>
         </div>
-
         <div class="item">
-          <img src="img/frango.jpg" alt="Sleepy Chicken" loading="lazy" />
-          <h3>Sleepy Chicken</h3>
-          <p>Frango empanado crocante com maionese artesanal e alface americana.</p>
-          <button class="button" data-produto="Sleepy Chicken" data-preco="24">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Sleepy+Cheese" alt="Sleepy Cheese" loading="lazy" />
+          <h3>Sleepy Cheese</h3>
+          <p>Hambúrguer de frango com queijo cremoso e alface crocante.</p>
+          <button class="button" data-produto="Sleepy Cheese" data-preco="22">Adicionar ao pedido</button>
         </div>
-
         <div class="item">
-          <img src="img/vegano.jpg" alt="Dream Veggie" loading="lazy" />
-          <h3>Dream Veggie <span class="selo vegano">Vegano</span></h3>
-          <p>Hambúrguer vegetal com cebola caramelizada, tomate e rúcula.</p>
-          <button class="button" data-produto="Dream Veggie" data-preco="26">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Pajamas+Classic" alt="Pajamas Classic" loading="lazy" />
+          <h3>Pajamas Classic</h3>
+          <p>Hambúrguer clássico com carne bovina, queijo e molho especial.</p>
+          <button class="button" data-produto="Pajamas Classic" data-preco="20">Adicionar ao pedido</button>
         </div>
       </div>
     </section>
@@ -76,24 +53,16 @@
     <section id="tab-bebidas" class="tab-content">
       <div class="menu">
         <div class="item">
-          <img src="img/soda.jpg" alt="Refrigerante" loading="lazy" />
-          <h3>Refrigerante</h3>
-          <p>Escolha entre Coca-Cola, Guaraná ou Pepsi. 350ml gelado.</p>
-          <button class="button" data-produto="Refrigerante" data-preco="7">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Soda" alt="Soda" loading="lazy" />
+          <h3>Soda</h3>
+          <p>Refrigerante geladinho para acompanhar seu lanche.</p>
+          <button class="button" data-produto="Soda" data-preco="7">Adicionar ao pedido</button>
         </div>
-
         <div class="item">
-          <img src="img/suco.jpg" alt="Suco Natural" loading="lazy" />
-          <h3>Suco Natural <span class="selo natural">Natural</span></h3>
-          <p>Laranja ou limão, feito na hora, sem adição de açúcar.</p>
-          <button class="button" data-produto="Suco Natural" data-preco="9">Adicionar ao pedido</button>
-        </div>
-
-        <div class="item">
-          <img src="img/cha.jpg" alt="Chá Gelado" loading="lazy" />
-          <h3>Chá Gelado</h3>
-          <p>Chá preto ou chá verde com hortelã, servido bem gelado.</p>
-          <button class="button" data-produto="Chá Gelado" data-preco="8">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Suco+Natural" alt="Suco Natural" loading="lazy" />
+          <h3>Suco Natural</h3>
+          <p>Suco fresco de laranja ou limão.</p>
+          <button class="button" data-produto="Suco Natural" data-preco="8">Adicionar ao pedido</button>
         </div>
       </div>
     </section>
@@ -101,24 +70,16 @@
     <section id="tab-sobremesas" class="tab-content">
       <div class="menu">
         <div class="item">
-          <img src="img/brownie.jpg" alt="Brownie com Sorvete" loading="lazy" />
-          <h3>Brownie com Sorvete</h3>
-          <p>Brownie de chocolate com sorvete de creme e calda quente.</p>
-          <button class="button" data-produto="Brownie com Sorvete" data-preco="14">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Brownie" alt="Brownie" loading="lazy" />
+          <h3>Brownie</h3>
+          <p>Deliciosa sobremesa de chocolate com sorvete.</p>
+          <button class="button" data-produto="Brownie" data-preco="12">Adicionar ao pedido</button>
         </div>
-
         <div class="item">
-          <img src="img/milkshake.jpg" alt="Milkshake" loading="lazy" />
-          <h3>Milkshake <span class="selo promocao">Promoção</span></h3>
-          <p>Chocolate, morango ou baunilha. 300ml de cremosidade!</p>
-          <button class="button" data-produto="Milkshake" data-preco="10">Adicionar ao pedido</button>
-        </div>
-
-        <div class="item">
-          <img src="img/mousse.jpg" alt="Mousse de Maracujá" loading="lazy" />
-          <h3>Mousse de Maracujá</h3>
-          <p>Doce e azedinho na medida certa, com base cremosa.</p>
-          <button class="button" data-produto="Mousse de Maracujá" data-preco="9">Adicionar ao pedido</button>
+          <img src="https://via.placeholder.com/300x200?text=Milkshake" alt="Milkshake" loading="lazy" />
+          <h3>Milkshake</h3>
+          <p>Milkshake cremoso de chocolate ou baunilha.</p>
+          <button class="button" data-produto="Milkshake" data-preco="15">Adicionar ao pedido</button>
         </div>
       </div>
     </section>
@@ -127,20 +88,19 @@
       <div class="sobre-loja">
         <h2>Sobre a Pajamas Burger</h2>
         <p>
-          Na <strong>Pajamas Burger</strong>, nossa missão é oferecer conforto e sabor em cada mordida.
-          Nossos lanches são preparados com ingredientes frescos, em um ambiente acolhedor e descontraído.
+          Na Pajamas Burger, acreditamos que a comida deve ser tão aconchegante quanto uma noite de sono.
+          Servimos os melhores hambúrgueres com ingredientes frescos e saborosos.
+          Venha provar nossos lanches e se sentir em casa!
         </p>
-        <p>
-          Seja para um jantar em família, um encontro entre amigos ou aquele pedido de última hora no sofá — estamos aqui para tornar sua refeição inesquecível.
-        </p>
-        <p><em>Sinta-se em casa. Saboreie como se estivesse de pijama.</em></p>
       </div>
     </section>
 
+    <!-- Carrinho e WhatsApp -->
     <section id="carrinho">
       <h3>Seu Pedido</h3>
-      <ul id="itens-pedido"></ul>
-      <button id="finalizar-pedido">Finalizar Pedido</button>
+      <ul id="lista-carrinho"></ul>
+      <p id="total">Total: R$ 0,00</p>
+      <button onclick="enviarPedido()">Finalizar Pedido</button>
     </section>
 
     <div class="whatsapp-button">
@@ -155,11 +115,25 @@
   <footer>
     <p>&copy; 2025 Pajamas Burger - Todos os direitos reservados</p>
     <p>
-      <a href="mailto:contato@pajamasburger.com">Contato</a> |
+      <a href="mailto:contato@pajamasburger.com">Contato</a> | 
       <a href="#">Política de Privacidade</a>
     </p>
   </footer>
 
   <script src="script.js" defer></script>
+  <script>
+    // Script para abas funcionar corretamente
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
