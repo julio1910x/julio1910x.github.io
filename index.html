@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hambúrgueres artesanais, bebidas e sobremesas com tema aconchegante." />
   <title>Pajamas Burger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,7 +21,6 @@
     <h1>Pajamas Burger</h1>
     <h2>Bem-vindo ao hambúrguer mais aconchegante da cidade!</h2>
 
-    <!-- Abas de navegação -->
     <nav class="tabs">
       <button class="tab-button active" data-tab="tab-lanches">Lanches</button>
       <button class="tab-button" data-tab="tab-bebidas">Bebidas</button>
@@ -26,32 +28,31 @@
       <button class="tab-button" data-tab="tab-sobre">Sobre</button>
     </nav>
 
-    <!-- Conteúdos das abas -->
     <section id="tab-lanches" class="tab-content active">
       <div class="menu">
         <div class="item">
-          <img src="img/hamburguer.jpg" alt="Night Burger" loading="lazy" />
+          <img src="img/hamburguer.jpg" alt="Night Burger com cheddar, cebola e bacon" loading="lazy" />
           <h3>Night Burger</h3>
           <p>Hambúrguer suculento com cheddar, cebola e bacon.</p>
           <button class="button" data-produto="Night Burger" data-preco="25">Adicionar ao pedido</button>
         </div>
         <div class="item">
-          <img src="img/k.jpg" alt="Sleepy Cheese" loading="lazy" />
+          <img src="img/k.jpg" alt="Sleepy Cheese com bacon e queijo" loading="lazy" />
           <h3>Sleepy Cheese</h3>
-          <p>Hambúrguer clássico com bancon e queijo.</p>
+          <p>Hambúrguer clássico com bacon e queijo.</p>
           <button class="button" data-produto="Sleepy Cheese" data-preco="22">Adicionar ao pedido</button>
         </div>
         <div class="item">
-          <img src="img/teste.jpg" alt="Pajamas Classic" loading="lazy" />
+          <img src="img/teste.jpg" alt="Pajamas Classic com carne bovina e cheddar" loading="lazy" />
           <h3>Pajamas Classic</h3>
           <p>Hambúrguer clássico com carne bovina, cheddar, bacon e alface.</p>
           <button class="button" data-produto="Pajamas Classic" data-preco="20">Adicionar ao pedido</button>
         </div>
         <div class="item">
-          <img src="img/teste2.avif" alt="Double Burger" loading="lazy" />
-          <h3>Burger Veggie</h3>
+          <img src="img/teste2.avif" alt="Double Burger com cheddar e bacon" loading="lazy" />
+          <h3>Double Burger</h3>
           <p>Hambúrguer duplo com cheddar, bacon e alface.</p>
-          <button class="button" data-produto="Burger Veggie" data-preco="23">Adicionar ao pedido</button>
+          <button class="button" data-produto="Double Burger" data-preco="23">Adicionar ao pedido</button>
         </div>
       </div>
     </section>
@@ -70,14 +71,13 @@
           <p>Suco fresco de laranja ou limão.</p>
           <button class="button" data-produto="Suco Natural" data-preco="8">Adicionar ao pedido</button>
         </div>
-
       </div>
     </section>
 
     <section id="tab-sobremesas" class="tab-content">
       <div class="menu">
         <div class="item">
-          <img src="img/brownie.jpeg" alt="Brownie" loading="lazy" />
+          <img src="img/brownie.jpeg" alt="Brownie com sorvete" loading="lazy" />
           <h3>Brownie</h3>
           <p>Deliciosa sobremesa de chocolate com sorvete.</p>
           <button class="button" data-produto="Brownie" data-preco="12">Adicionar ao pedido</button>
@@ -108,20 +108,16 @@
       </div>
     </section>
 
-    <!-- Carrinho e WhatsApp -->
     <section id="carrinho">
       <h3>Seu Pedido</h3>
       <ul id="lista-carrinho"></ul>
       <p id="total">Total: R$ 0,00</p>
       <button id="finalizar-pedido">Finalizar Pedido</button>
+      <button id="limpar-carrinho">Limpar Carrinho</button>
     </section>
 
     <div class="whatsapp-button">
-      <a id="link-whatsapp"
-         href="#"
-         target="_blank" rel="noopener noreferrer">
-        Fazer Pedido pelo WhatsApp
-      </a>
+      <a id="link-whatsapp" href="#" target="_blank" rel="noopener noreferrer">Fazer Pedido pelo WhatsApp</a>
     </div>
   </main>
 

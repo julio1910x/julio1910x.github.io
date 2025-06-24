@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
   color: white;
   position: relative;
+  z-index: 0;
 }
 
 /* Fundo animado */
@@ -38,12 +39,14 @@ h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   color: #fff;
+  transition: color 0.3s;
 }
 
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #e74c3c;
+  transition: color 0.3s;
 }
 
 /* Menu */
@@ -60,11 +63,16 @@ h2 {
   border-radius: 10px;
   width: 280px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   animation: slideIn 0.6s ease-out forwards;
   opacity: 0;
   transform: translateY(20px);
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s ease;
+}
+
+.item:hover {
+  background-color: #3c4f66;
+  transform: scale(1.02);
 }
 
 @keyframes slideIn {
@@ -87,14 +95,16 @@ h2 {
 .item h3 {
   margin-top: 15px;
   font-size: 1.5rem;
+  transition: color 0.3s;
 }
 
 .item p {
   font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 /* Botões */
-.button, #finalizar-pedido, .excluir-btn {
+.button, #finalizar-pedido, .excluir-btn, #limpar-carrinho {
   background-color: #e74c3c;
   color: white;
   padding: 10px 16px;
@@ -105,7 +115,10 @@ h2 {
   margin-top: 10px;
 }
 
-.button:hover, #finalizar-pedido:hover, .excluir-btn:hover {
+.button:hover,
+#finalizar-pedido:hover,
+.excluir-btn:hover,
+#limpar-carrinho:hover {
   background-color: #c0392b;
 }
 
@@ -117,13 +130,13 @@ h2 {
   margin-top: 40px;
 }
 
-#itens-pedido {
+#lista-carrinho {
   list-style: none;
   padding: 0;
   margin: 10px 0;
 }
 
-#itens-pedido li {
+#lista-carrinho li {
   border-bottom: 1px solid #7f8c8d;
   padding: 8px 0;
 }
@@ -225,11 +238,7 @@ footer a:hover {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.tab-button:hover {
-  background-color: #e74c3c;
-  color: #fff;
-}
-
+.tab-button:hover,
 .tab-button.active {
   background-color: #e74c3c;
   color: #fff;
